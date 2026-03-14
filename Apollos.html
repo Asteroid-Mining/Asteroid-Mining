@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollos | Primary Mining Targets</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --accent-dark: #1e293b;
+            --accent-blue: #0ea5e9;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--accent-dark);
+            color: white;
+            padding: 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent-blue); /* Blue for Apollos */
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            background-color: var(--accent-blue);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover { background-color: #0284c7; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            border-left: 5px solid var(--accent-blue);
+            padding-left: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* --- FEATURE CARDS --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .feature-card h3 {
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* --- DATA TABLE --- */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 2rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th {
+            background-color: var(--accent-dark);
+            color: white;
+            text-align: left;
+            padding: 1rem;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .brand { font-size: 1.2rem; }
+            h1 { font-size: 2rem !important; }
+            .section-title { font-size: 1.5rem; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">Asteroid Mining <span style="color:var(--accent-blue)">//</span> Apollos</div>
+        <a href="Near Earth Asteroids.html" class="back-btn">← Back to NEAs</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Apollo-Class Asteroids</h1>
+        <p style="font-size: 1.2rem; color: #64748b; max-width: 800px;">
+            Apollos are the most abundant and commercially viable group of Near-Earth Asteroids. They are <strong>Earth-crossing</strong>, but unlike Atens, their semi-major axis is greater than 1 AU. This means they spend the vast majority of their time in the deep cold of space outside Earth's orbit, sweeping inward only to cross our path.
+        </p>
+
+        <div style="margin-top: 2rem;">
+            <img src="Apollo Orbit Diagram.png" alt="Diagram showing Apollo orbit" style="margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        </div>
+    </section>
+
+    <section style="background-color: var(--accent-dark); color: white; padding: 4rem 0;">
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title" style="color: white; border-color: var(--accent-blue);">The Commercial Core</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--accent-blue);">
+                    <h3 style="color: #38bdf8;">The Largest Target Pool</h3>
+                    <p style="color: #cbd5e1;">Making up over 60% of all known NEAs, Apollos offer the highest sheer volume of targets. If asteroid mining becomes a trillion-dollar industry, the bulk of those resources will come from this classification.</p>
+                </div>
+                
+                <div class="feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--accent-green);">
+                    <h3 style="color: #34d399;">Water & Volatiles</h3>
+                    <p style="color: #cbd5e1;">Because they spend most of their time further from the Sun than Earth, many Apollos (specifically C-types) retain significant amounts of water ice and volatiles—crucial for manufacturing rocket fuel in space.</p>
+                </div>
+
+                <div class="feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--accent-gold);">
+                    <h3 style="color: #fbbf24;">Proven Accessibility</h3>
+                    <p style="color: #cbd5e1;">We know we can mine them because we already have. Both the Japanese Hayabusa missions and NASA's OSIRIS-REx successfully rendezvoused with and extracted physical samples from Apollo-class asteroids.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Notable Apollo Candidates</h2>
+        <p>The "All-Stars" of near-Earth space exploration. These are some of the most studied objects in the solar system.</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Designation</th>
+                        <th>Type</th>
+                        <th>Estimated Value</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>101955 Bennu</strong></td>
+                        <td>C-Type</td>
+                        <td>~$669 Million</td>
+                        <td>Sampled by NASA. It is rich in carbon and water, making it a prime candidate for an orbital "gas station."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>162173 Ryugu</strong></td>
+                        <td>C-Type</td>
+                        <td>~$82 Billion</td>
+                        <td>Sampled by JAXA. Contains pristine organic materials dating back to the formation of the solar system.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>25143 Itokawa</strong></td>
+                        <td>S-Type</td>
+                        <td>N/A (Scientific)</td>
+                        <td>The first asteroid ever sampled by humanity (Hayabusa in 2005). Proved that many asteroids are loose "rubble piles" rather than solid rocks.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; background: var(--bg-white); color: #64748b; margin-top: 3rem; border-top: 1px solid #e2e8f0;">
+        <p>Part of the Asteroid Mining Informational Series</p>
+    </footer>
+
+</body>
+</html>
