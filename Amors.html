@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amors | The Martian Stepping Stones</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --accent-dark: #1e293b;
+            --accent-blue: #0ea5e9;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--accent-dark);
+            color: white;
+            padding: 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent-red); /* Red for Mars-proximity */
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            background-color: var(--accent-blue);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover { background-color: #0284c7; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            border-left: 5px solid var(--accent-red);
+            padding-left: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* --- FEATURE CARDS --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .feature-card h3 {
+            color: var(--accent-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* --- DATA TABLE --- */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 2rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th {
+            background-color: var(--accent-dark);
+            color: white;
+            text-align: left;
+            padding: 1rem;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .brand { font-size: 1.2rem; }
+            h1 { font-size: 2rem !important; }
+            .section-title { font-size: 1.5rem; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">Asteroid Mining <span style="color:var(--accent-red)">//</span> Amors</div>
+        <a href="NEAs.html" class="back-btn">← Back to NEAs</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Amor-Class Asteroids</h1>
+        <p style="font-size: 1.2rem; color: #64748b; max-width: 800px;">
+            Amors are a group of Near-Earth Asteroids that approach Earth from the outside, but <strong>do not cross Earth's orbit</strong>. Their closest approach to the Sun (perihelion) is strictly greater than Earth's furthest point, meaning they spend their lives hovering in the space between Earth and Mars.
+        </p>
+
+        <div style="margin-top: 2rem;">
+            <img src="Amor Orbit Diagram.png" alt="Diagram showing Amor orbit outside Earth" style="margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        </div>
+    </section>
+
+    <section style="background-color: var(--accent-dark); color: white; padding: 4rem 0;">
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title" style="color: white; border-color: var(--accent-red);">The Deep Space Outposts</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--accent-green);">
+                    <h3 style="color: #34d399;">Zero Collision Risk</h3>
+                    <p style="color: #cbd5e1;">Because they never cross Earth's path, Amors pose absolutely zero threat to our planet. This makes them highly attractive for placing long-term, permanent industrial infrastructure without fear of altering a dangerous orbit.</p>
+                </div>
+                
+                <div class="feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--accent-red);">
+                    <h3 style="color: #f87171;">The Martian Connection</h3>
+                    <p style="color: #cbd5e1;">Many Amors actually cross the orbit of Mars. In fact, it is widely believed by astronomers that the two moons of Mars (Phobos and Deimos) are actually captured Amor-class asteroids!</p>
+                </div>
+
+                <div class="feature-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-top: 4px solid var(--accent-blue);">
+                    <h3 style="color: #38bdf8;">Strategic Waystations</h3>
+                    <p style="color: #cbd5e1;">For human missions expanding out into the wider solar system, Amors serve as perfectly positioned supply depots and communication relays located safely outside Earth's gravity well.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">Notable Amor Candidates</h2>
+        <p>While slightly harder to reach from Earth than Apollos or Atens, Amors hold immense historical and strategic value.</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Designation</th>
+                        <th>Type</th>
+                        <th>Diameter (Est.)</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1221 Amor</strong></td>
+                        <td>Unclassified</td>
+                        <td>~1.0 km</td>
+                        <td>The namesake of the class. It frequently crosses the orbit of Mars, demonstrating the dynamic relationship between these asteroids and the Red Planet.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>433 Eros</strong></td>
+                        <td>S-Type</td>
+                        <td>~16.8 km</td>
+                        <td>A massive, peanut-shaped asteroid. It was the first asteroid ever orbited and landed upon by a spacecraft (NEAR Shoemaker in 2001).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1036 Ganymed</strong></td>
+                        <td>S-Type</td>
+                        <td>~35.0 km</td>
+                        <td>The largest known Near-Earth Asteroid of any classification. A mining operation here would be closer to exploring a small moon than a typical asteroid.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; background: var(--bg-white); color: #64748b; margin-top: 3rem; border-top: 1px solid #e2e8f0;">
+        <p>Part of the Asteroid Mining Informational Series</p>
+    </footer>
+
+</body>
+</html>
