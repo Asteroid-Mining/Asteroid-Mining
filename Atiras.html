@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atiras | Target Analysis</title>
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --accent-dark: #1e293b;
+            --accent-blue: #0ea5e9;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --accent-gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--accent-dark);
+            color: white;
+            padding: 2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent-red); /* Red accent for inner-solar system */
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-btn:hover { background-color: rgba(255,255,255,0.2); }
+
+        /* --- LAYOUT --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            border-left: 5px solid var(--accent-red);
+            padding-left: 15px;
+        }
+
+        /* --- CSS ORBIT DIAGRAM (No image required!) --- */
+        .orbit-showcase {
+            background: var(--accent-dark);
+            border-radius: 12px;
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px; height: 30px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-gold);
+        }
+
+        .orbit-earth {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px; height: 220px;
+            border: 2px dashed rgba(14, 165, 233, 0.4);
+            border-radius: 50%;
+        }
+
+        .orbit-atira {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 130px; height: 110px; /* Elliptical */
+            border: 2px solid var(--accent-red);
+            border-radius: 50%;
+        }
+
+        .planet-earth {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px; height: 12px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+        }
+
+        .asteroid-atira {
+            position: absolute;
+            bottom: 15%; right: 10%;
+            width: 8px; height: 8px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+        }
+
+        .diagram-legend {
+            display: flex;
+            gap: 1.5rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+
+        /* --- STAT BOXES --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-box {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border-top: 4px solid var(--accent-dark);
+        }
+
+        .stat-box.warning { border-top-color: var(--accent-red); }
+        .stat-box.opportunity { border-top-color: var(--accent-green); }
+
+        /* --- TABLE --- */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-top: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* Ensures it scrolls on phones instead of squishing */
+        }
+
+        th {
+            background-color: var(--accent-dark);
+            color: white;
+            text-align: left;
+            padding: 1.2rem 1rem;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .brand { font-size: 1.3rem; }
+            h1 { font-size: 2rem !important; }
+            .section-title { font-size: 1.6rem; }
+            .diagram-legend { flex-direction: column; gap: 0.5rem; }
+            .container { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">Asteroid Mining <span style="color:var(--accent-red)">//</span> Atiras</div>
+        <a href="NEAs.html" class="back-btn">← Back to Classifications</a>
+    </header>
+
+    <main class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Atira-Class Asteroids</h1>
+        <p style="font-size: 1.2rem; color: #64748b; max-width: 800px;">
+            Also known as Interior-Earth Objects (IEOs), Atiras are a rare class of Near-Earth Asteroids whose orbits are completely contained <strong>inside</strong> the orbit of Earth. Their aphelion (furthest point from the Sun) is less than 0.983 AU.
+        </p>
+
+        <div class="orbit-showcase">
+            <div class="diagram-container">
+                <div class="sun"></div>
+                <div class="orbit-earth"><div class="planet-earth"></div></div>
+                <div class="orbit-atira"><div class="asteroid-atira"></div></div>
+            </div>
+            <div class="diagram-legend">
+                <div class="legend-item"><div class="dot" style="background: var(--accent-blue);"></div> Earth's Orbit</div>
+                <div class="legend-item"><div class="dot" style="background: var(--accent-red);"></div> Atira Orbit</div>
+                <div class="legend-item"><div class="dot" style="background: var(--accent-gold);"></div> The Sun</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Mining Viability Profile</h2>
+        <div class="stats-grid">
+            <div class="stat-box warning">
+                <h3 style="color: var(--accent-red); margin-bottom: 10px;">The Challenge: High Delta-V</h3>
+                <p>Because they are deep within the Sun's gravity well, it takes a massive amount of energy (Delta-V) to brake a spacecraft coming from Earth to match an Atira's orbit. They are also notoriously difficult to detect from Earth because they are always lost in the Sun's daylight glare.</p>
+            </div>
+            
+            <div class="stat-box opportunity">
+                <h3 style="color: var(--accent-green); margin-bottom: 10px;">The Opportunity: Inner System Hubs</h3>
+                <p>While poor targets for bringing materials back to Earth, Atiras are bathed in intense, constant solar energy. They are considered prime candidates for building autonomous solar-refineries or serving as forward-operating bases for future missions to Venus or Mercury.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Notable Atira Candidates</h2>
+        <p style="margin-bottom: 1rem;">To date, only a few dozen Atiras have been discovered, making them the smallest known group of NEAs.</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Designation</th>
+                        <th>Discovery</th>
+                        <th>Est. Diameter</th>
+                        <th>Unique Characteristics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>163693 Atira</strong></td>
+                        <td>2003</td>
+                        <td>~4.8 km</td>
+                        <td>The namesake of the class. It is a binary asteroid system, accompanied by a small 1km moon.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2020 AV2</strong></td>
+                        <td>2020</td>
+                        <td>~1.5 km</td>
+                        <td>A sub-class called a "Vatira" — its orbit is entirely inside the orbit of <em>Venus</em>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>434326 (2004 EA21)</strong></td>
+                        <td>2004</td>
+                        <td>~1.2 km</td>
+                        <td>One of the closest known approaches to the Sun, subjected to extreme thermal stresses.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2021 PH27</strong></td>
+                        <td>2021</td>
+                        <td>~1.0 km</td>
+                        <td>Holds the record for the shortest orbital period of any known asteroid (113 days).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; background: var(--accent-dark); color: #64748b; margin-top: 3rem;">
+        <p>Part of the Asteroid Mining Informational Series</p>
+    </footer>
+
+</body>
+</html>
