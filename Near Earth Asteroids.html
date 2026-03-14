@@ -105,6 +105,9 @@
         }
 
         .class-card {
+            display: block; /* Add this so it behaves like a container */
+            text-decoration: none; /* Add this to remove the link underline */
+            color: inherit;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 2rem;
@@ -263,29 +266,27 @@
             </p>
 
             <div class="class-grid">
-                <div class="class-card">
+                <a href="Atiras.html" class="class-card">
                     <h3>Atiras</h3>
                     <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #94a3b8;">Interior to Earth</p>
                     <p>These asteroids have orbits strictly <strong>inside</strong> Earth's orbit. They are difficult to observe because they are always close to the Sun in the sky, but they offer stable, frequent launch windows.</p>
-                </div>
-
-                <div class="class-card">
+                </a> <a href="Atens.html" class="class-card">
                     <h3>Atens</h3>
                     <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #94a3b8;">Earth-Crossing (Small)</p>
                     <p>Asteroids with an orbit smaller than Earth's, but their furthest point (aphelion) crosses Earth's path. High risk of collision, but high accessibility.</p>
-                </div>
+                </a>
 
-                <div class="class-card" style="border-color: var(--accent-blue); background: rgba(14, 165, 233, 0.1);">
+                <a href="Apollos.html" class="class-card" style="border-color: var(--accent-blue); background: rgba(14, 165, 233, 0.1);">
                     <h3>Apollos</h3>
                     <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--accent-blue);">Earth-Crossing (Large)</p>
                     <p>The largest group of NEAs. Their orbits are larger than Earth's, but their closest point (perihelion) crosses Earth's path. <strong>Most mining targets are likely to be Apollos.</strong></p>
-                </div>
+                </a>
 
-                <div class="class-card">
+                <a href="Amors.html" class="class-card">
                     <h3>Amors</h3>
                     <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #94a3b8;">Exterior Approach</p>
                     <p>These approach Earth but do not cross its orbit; they stay strictly outside. They often hover between Earth and Mars, making them ideal stopovers for Martian missions.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
