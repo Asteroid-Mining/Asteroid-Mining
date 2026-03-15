@@ -1,27 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schematic | Mini Bee Optical Miner</title>
     <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --accent-dark: #1e293b;
+            --accent-gold: #f59e0b; /* Matching the Optical Mining page */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--accent-dark);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #cbd5e1;
+        }
+
         .back-btn {
-            background-color: rgb(0, 44, 109);
-            color: rgb(255, 255, 255);
+            background-color: var(--accent-gold);
+            color: var(--accent-dark);
             text-decoration: none;
             padding: 0.5rem 1.5rem;
-            border-radius: 4px; 
-            font-weight: bold; 
+            border-radius: 4px;
+            font-weight: bold;
             transition: background 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-        .back-btn:hover {
-            background-color: rgb(255, 255, 255);
-            color: black;
+
+        .back-btn:hover { 
+            background-color: #d97706; 
+            color: white; 
+        }
+
+        /* --- DIAGRAM VIEWER --- */
+        .container {
+            flex: 1; /* Pushes footer down */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .diagram-wrapper {
+            background: var(--bg-white);
+            border: 2px dashed #94a3b8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%; /* Allows it to shrink on phones */
+        }
+
+        .diagram-wrapper img {
+            max-width: 100%; /* Never overflows its container */
+            height: auto;    /* Keeps proportions perfect */
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .caption {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .diagram-wrapper {
+                padding: 1rem;
+            }
         }
     </style>
-    <body style="background-color: lightgray;">
-        <p>
-            <a href="Optical Mining.html" class="back-btn">Back</a>
-        </p>
-        <p style="display: flex; margin-left: 300px; margin-right: 310px; border: 2px dashed #000000; padding: 1rem; border-radius: 8px; background: #ffffff; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);">
-            <img src="Mini Bee Diagram.png" style="width: 700px;">
-        </p>
-    </body>
+</head>
+<body>
+
+    <header>
+        <div class="brand">Schematic Viewer</div>
+        <a href="Optical Mining.html" class="back-btn">← Back to Article</a>
+    </header>
+
+    <main class="container">
+        <div class="diagram-wrapper">
+            <img src="Mini Bee Diagram.png" alt="Mini Bee Optical Miner Schematic">
+            <div class="caption">TransAstra "Mini Bee" Architecture</div>
+        </div>
+    </main>
+
+</body>
 </html>
