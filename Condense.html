@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condense | Freezing the Fuel</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc; --bg-white: #ffffff; --text-main: #334155; --text-dark: #0f172a;
+            --accent-dark: #1e293b; --accent-blue: #0ea5e9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-blue);
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: var(--accent-blue); color: white; text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: bold; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: #0284c7; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-blue); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 4px solid var(--accent-blue); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Optical Mining <span style="color:var(--accent-blue)">//</span> 04 Condense</div>
+        <a href="Optical Mining.html" class="back-btn">← Back to Overview</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Cryogenic Cold Traps</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            Once the containment bag is filled with steam from the spalling process, that gas needs to be safely stored so the spacecraft can transport it.
+        </p>
+
+        <img src="Cryogenic Cold Traps.png" alt="Steam freezing into ice inside a spacecraft's cold trap" style="max-width: 700px;">
+
+        <div class="content-box">
+            <h2 class="section-title" style="border: none; padding: 0;">Passive Freezing</h2>
+            <p style="margin-bottom: 1rem;">Spacecraft utilize "Cold Traps" to manage the gas. A cold trap is essentially a tank or surface on the spacecraft that is kept deliberately in the shadows, shielded entirely from the Sun. In the vacuum of space, anything in the shade immediately drops to hundreds of degrees below zero.</p>
+            <p>As the warm steam flows from the containment bag into the cold trap, it hits these freezing surfaces and instantly undergoes deposition—turning directly from a gas back into a solid block of pure ice. This passive system requires zero electricity to run, neatly packaging the asteroid's water into solid, storable fuel.</p>
+        </div>
+    </section>
+</body>
+</html>
