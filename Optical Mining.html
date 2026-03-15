@@ -190,13 +190,46 @@
             margin-top: 4rem;
         }
 
+                /* --- MOBILE ADJUSTMENTS --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .diagram-container { flex-direction: column; }
+            /* 1. Stack the header */
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .brand { font-size: 1.2rem; }
+            
+            /* 2. Scale down the Hero section */
+            .hero { padding: 2rem 1rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+
+            /* 3. Reduce container padding to save screen space */
+            .container, .process-section { 
+                padding: 2rem 1.5rem; 
+            }
+
+            /* 4. Fix fixed-width images */
+            img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* 5. Stack the diagram text and visual */
+            .diagram-container { 
+                flex-direction: column; 
+                gap: 1.5rem;
+            }
+            .diagram-visual {
+                padding: 0.5rem;
+            }
         }
+
         .open-diagram {
             display: inline-block; 
-            padding: 1px 20px; 
+            padding: 10px 20px; 
             background: var(--accent-dark); 
             color: var(--accent-gold); 
             border: none; 
@@ -309,7 +342,8 @@
 
     <section class="container" style="padding-top: 0;">
         <h2 class="section-title">Optical vs. Mechanical</h2>
-        
+
+        <div style="overflow-x: auto;">
         <table class="comparison-table">
             <thead>
                 <tr>
@@ -341,6 +375,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </section>
 
     <footer>
