@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermal Shock | Spalling the Rock</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc; --bg-white: #ffffff; --text-main: #334155; --text-dark: #0f172a;
+            --accent-dark: #1e293b; --accent-red: #ef4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-red);
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: var(--accent-red); color: white; text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: bold; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: #b91c1c; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-red); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 4px solid var(--accent-red); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Optical Mining <span style="color:var(--accent-red)">//</span> 02 Thermal Shock</div>
+        <a href="Optical Mining.html" class="back-btn">← Back to Overview</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">The Physics of Spalling</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            When the concentrated solar beam hits the freezing cold surface of the asteroid, the drastic temperature change causes the rock to rapidly expand and violently fracture.
+        </p>
+
+        <img src="Thermal Spalling.png" alt="Asteroid surface fracturing under intense heat" style="max-width: 700px;">
+
+        <div class="content-box">
+            <h2 class="section-title" style="border: none; padding: 0;">Non-Contact Excavation</h2>
+            <p style="margin-bottom: 1rem;">This fracturing process is known as <strong>Thermal Spalling</strong>. Because heat doesn't travel well through porous asteroid rock, the very top layer gets incredibly hot while the rock just a few millimeters below remains freezing. This creates immense mechanical stress.</p>
+            <p>The rock simply pops and flakes away, layer by layer, turning the solid surface into gravel and dust. Crucially, as the rock fractures, the heat sublimates any trapped water ice inside the rock, instantly turning it into high-pressure steam that blasts out of the asteroid.</p>
+        </div>
+    </section>
+</body>
+</html>
