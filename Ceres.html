@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Ceres | The Water Hub</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --accent-dark: #0f172a;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4; /* Ceres Water Accent */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-cyan);
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: var(--accent-cyan); color: #0f172a; text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.3s;
+        }
+        .back-btn:hover { background-color: #22d3ee; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-cyan); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .stat-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-cyan); text-align: center; }
+        .stat-card h4 { color: #64748b; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .stat-card p { font-size: 1.5rem; font-weight: bold; color: var(--accent-dark); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Asteroid Mining <span style="color:var(--accent-cyan)">//</span> Ceres</div>
+        <a href="Main Belt.html" class="back-btn">← Back to Main Belt</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">1 Ceres</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            The undisputed king of the asteroid belt. Ceres is so massive that its own gravity pulled it into a sphere, classifying it as a <strong>Dwarf Planet</strong>. It contains nearly a third of the total mass of the entire asteroid belt.
+        </p>
+
+        <img src="Ceres Surface.png" alt="Surface of Ceres" style="max-width: 600px;">
+
+        <div class="stats-grid">
+            <div class="stat-card"><h4>Diameter</h4><p>940 km</p></div>
+            <div class="stat-card"><h4>Gravity</h4><p>0.029 g</p></div>
+            <div class="stat-card"><h4>Water Content</h4><p>~25% by mass</p></div>
+            <div class="stat-card"><h4>Escape Velocity</h4><p>0.51 km/s</p></div>
+        </div>
+
+        <div class="content-box">
+            <h2 class="section-title">The Deep Space Gas Station</h2>
+            <p style="margin-bottom: 1rem;">Ceres is mostly rock and ice. However, scientists estimate that its mantle contains <strong>more fresh water than all of Earth's freshwater reserves combined</strong>.</p>
+            <p>For asteroid miners, water isn't just for drinking—it's rocket fuel. By utilizing solar or nuclear power to undergo electrolysis, miners can split Ceres' ice into Hydrogen and Oxygen (liquid bipropellant). Because Ceres has very low gravity, launching heavy tankers of this fuel to refuel other spacecraft across the solar system is incredibly cheap compared to launching fuel from Earth.</p>
+        </div>
+
+        <div class="content-box" style="border-left: 5px solid var(--accent-dark);">
+            <h2 class="section-title" style="border-none; padding-left: 0;">Cryovolcanism</h2>
+            <p>NASA's Dawn spacecraft discovered <strong>Ahuna Mons</strong>, an enormous ice volcano on Ceres' surface. Instead of erupting molten rock, it erupts a briny mixture of warm water and salts. This active geology suggests an underground ocean of muddy, salty water may still exist, offering tantalizing prospects for astrobiology and easily extractable liquids.</p>
+        </div>
+    </section>
+</body>
+</html>
