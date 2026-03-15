@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silicates & Metals | Lunar Construction</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --accent-dark: #111827;
+            --accent-moon: #64748b; /* Silicates Accent */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-moon);
+            background-image: linear-gradient(180deg, rgba(100, 116, 139, 0.05) 1px, transparent 1px);
+            background-size: 100% 20px;
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: var(--accent-moon); color: white; text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.3s;
+        }
+        .back-btn:hover { background-color: #475569; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-moon); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .stat-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-moon); text-align: center; }
+        .stat-card h4 { color: #64748b; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .stat-card p { font-size: 1.5rem; font-weight: bold; color: var(--accent-dark); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 5px solid var(--accent-dark); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Asteroid Mining <span style="color:var(--accent-moon)">//</span> Silicates</div>
+        <a href="The Moon.html" class="back-btn">← Back to The Moon</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Silicates & Metals</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            It costs thousands of dollars to launch a single kilogram of material into space. If we want to build massive orbital shipyards, habitats, and launch pads, we have to build them out of the dirt already there.
+        </p>
+
+        <img src="Lunar 3D Printing.png" alt="Autonomous 3D printer building a lunar habitat" style="max-width: 700px;">
+
+        <div class="stats-grid">
+            <div class="stat-card"><h4>Primary Material</h4><p>Lunar Regolith</p></div>
+            <div class="stat-card"><h4>Composition</h4><p>Oxygen, Silicon, Iron</p></div>
+            <div class="stat-card"><h4>Process</h4><p>Microwave Sintering</p></div>
+            <div class="stat-card"><h4>Primary Use</h4><p>In-Situ Construction</p></div>
+        </div>
+
+        <div class="content-box" style="border-color: var(--accent-moon);">
+            <h2 class="section-title" style="border: none; padding: 0;">In-Situ Resource Utilization (ISRU)</h2>
+            <p style="margin-bottom: 1rem;">ISRU is the principle of "living off the land." Lunar regolith (the fine, razor-sharp dust covering the Moon) is rich in silicates, iron, titanium, and aluminum. Through a process called <strong>sintering</strong>, lasers or microwaves can melt this dust into a solid, ceramic-like material often referred to as "Lunarcrete."</p>
+            <p>Autonomous rovers can act like giant 3D printers, scooping up dirt and laying down molten regolith layer-by-layer to print blast shields, roads, and domed habitats without requiring a single brick from Earth.</p>
+        </div>
+
+        <div class="content-box">
+            <h2 class="section-title" style="border: none; padding: 0;">The Oxygen Byproduct</h2>
+            <p>Interestingly, lunar regolith is roughly <strong>40-45% Oxygen by weight</strong> (bound up in the minerals). Through processes like Molten Regolith Electrolysis (MRE), intense electrical currents can strip the oxygen molecules away from the iron and silicon. This provides a massive, secondary source of breathable oxygen and rocket oxidizer, entirely independent of the polar ice caps.</p>
+        </div>
+    </section>
+</body>
+</html>
