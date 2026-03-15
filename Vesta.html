@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Vesta | The Rocky Outpost</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --accent-dark: #0f172a;
+            --accent-slate: #64748b; /* Vesta Rocky Accent */
+            --accent-orange: #ea580c; 
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-slate);
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: var(--accent-slate); color: white; text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.3s;
+        }
+        .back-btn:hover { background-color: #94a3b8; color: #0f172a;}
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-slate); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .stat-card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-slate); text-align: center; }
+        .stat-card h4 { color: #64748b; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .stat-card p { font-size: 1.5rem; font-weight: bold; color: var(--accent-dark); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Asteroid Mining <span style="color:var(--accent-slate)">//</span> Vesta</div>
+        <a href="Main Asteroid Belt.html" class="back-btn">← Back to Main Belt</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">4 Vesta</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            The brightest asteroid in the sky and the second-most massive body in the asteroid belt. Unlike typical "rubble pile" asteroids, Vesta is a differentiated protoplanet with a defined crust, mantle, and core—much like Earth.
+        </p>
+
+        <img src="Vesta Topography.png" alt="Vesta and Rheasilvia Crater" style="max-width: 600px;">
+
+        <div class="stats-grid">
+            <div class="stat-card"><h4>Diameter</h4><p>525 km</p></div>
+            <div class="stat-card"><h4>Gravity</h4><p>0.025 g</p></div>
+            <div class="stat-card"><h4>Composition</h4><p>Basalt & Silicates</p></div>
+            <div class="stat-card"><h4>Key Feature</h4><p>Rheasilvia Crater</p></div>
+        </div>
+
+        <div class="content-box">
+            <h2 class="section-title">A Terrestrial Quarry</h2>
+            <p style="margin-bottom: 1rem;">Because Vesta experienced internal melting early in its history, its surface is composed of basaltic rock (hardened lava), making it remarkably similar to the terrestrial planets.</p>
+            <p>Mining operations on Vesta wouldn't be looking for water (like Ceres) or pure metals (like Psyche), but rather <strong>structural silicates and construction materials</strong>. The rock harvested here could be melted down or 3D printed to construct massive radiation shields, structural beams, and habitats for human colonists living in the asteroid belt.</p>
+        </div>
+
+        <div class="content-box" style="border-left: 5px solid var(--accent-orange);">
+            <h2 class="section-title" style="border-none; padding-left: 0;">The Rheasilvia Impact</h2>
+            <p>Vesta's southern hemisphere is dominated by <strong>Rheasilvia</strong>, a massive impact crater 500 kilometers wide (nearly the diameter of the asteroid itself!). The collision that created this crater was so violent that it blasted 1% of Vesta's total mass into deep space. Today, we occasionally find pieces of Vesta that have crashed down to Earth as HED meteorites.</p>
+        </div>
+    </section>
+</body>
+</html>
