@@ -190,10 +190,39 @@
         }
 
         /* Responsive */
+                /* --- MOBILE ADJUSTMENTS --- */
         @media (max-width: 768px) {
-            .split-layout { flex-direction: column; }
+            /* 1. Stack the header */
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 1.5rem;
+            }
+            .brand { font-size: 1.2rem; }
+
+            /* 2. Reduce massive padding */
+            .container, .visual-section, .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            /* 3. Scale down typography */
             .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+
+            /* 4. Force layout to stack neatly */
+            .split-layout { 
+                flex-direction: column; 
+                gap: 2rem; 
+            }
+            
+            /* 5. Force the steps and arrows into a single vertical line */
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
+
     </style>
 </head>
 <body>
