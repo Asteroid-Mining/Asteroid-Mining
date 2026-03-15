@@ -116,6 +116,9 @@
         }
 
         .resource-card {
+            display: block; /* Add this */
+            text-decoration: none; /* Add this */
+            color: inherit; /* Add this */
             background: white;
             padding: 2rem;
             border-radius: 8px;
@@ -224,32 +227,32 @@
             </p>
 
             <div class="resource-grid">
-                <div class="resource-card card-ice">
+                <a href="WaterIce.html" class="resource-card card-ice">
                     <span class="card-icon">💧</span>
                     <h3>Water Ice</h3>
                     <p style="color: #64748b; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Found in: Polar Craters</p>
                     <p>
                         The most valuable resource in space. Water can be electrolyzed into Hydrogen (Fuel) and Oxygen (Oxidizer). It turns the Moon into a massive gas station for ships heading to the Asteroid Belt.
                     </p>
-                </div>
+                </a>
 
-                <div class="resource-card card-h3">
+                <a href="Helium3.html" class="resource-card card-h3">
                     <span class="card-icon">⚛️</span>
                     <h3>Helium-3</h3>
                     <p style="color: #64748b; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Found in: Regolith</p>
                     <p>
                         Deposited by solar winds over billions of years. A rare isotope that theoretically allows for clean nuclear fusion. It could power the high-thrust engines needed to haul heavy asteroids.
                     </p>
-                </div>
+                </a>
 
-                <div class="resource-card card-regolith">
+                <a href="Silicates.html" class="resource-card card-regolith">
                     <span class="card-icon">🧱</span>
                     <h3>Silicates & Metals</h3>
                     <p style="color: #64748b; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem;">Found in: Surface Dust</p>
                     <p>
                         Lunar soil (regolith) can be sintered via 3D printing to build habitats, radiation shields, and landing pads. It allows us to build infrastructure without launching concrete from Earth.
                     </p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
