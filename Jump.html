@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jump | Magnetic Rakes</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc; --bg-white: #ffffff; --text-main: #334155; --text-dark: #0f172a;
+            --accent-dark: #1e1b4b; --accent-mag: #6366f1;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-mag);
+            background-image: radial-gradient(circle at 50% -20%, #312e81 0%, transparent 60%);
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: transparent; color: var(--accent-mag); border: 2px solid var(--accent-mag); text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 4px; font-weight: bold; transition: all 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-mag); color: white; box-shadow: 0 0 15px rgba(99, 102, 241, 0.6); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-mag); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 4px solid var(--accent-mag); }
+        
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Magnetic Rakes <span style="color:var(--accent-mag)">//</span> 02 The Jump</div>
+        <a href="Magnetic Rakes.html" class="back-btn">← Back to Overview</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Electromagnetic Activation</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            When the coils are activated, the magnetic field easily overpowers the asteroid's weak gravity, causing the surface to literally leap upward.
+        </p>
+
+        <img src="Magnetic Dust Jump.png" alt="Iron dust flying up from an asteroid surface" style="max-width: 700px;">
+
+        <div class="content-box">
+            <h2 class="section-title" style="border: none; padding: 0;">Selective Sorting</h2>
+            <p style="margin-bottom: 1rem;">This is where the magic of the magnetic rake happens. Because the system uses magnetic fields rather than mechanical suction, it acts as an automatic filter.</p>
+            <p>Silicates, rocky debris, and unwanted slag are completely ignored by the magnetic field and remain on the ground. Meanwhile, the valuable ferromagnetic grains of nickel, iron, and cobalt leap into the vacuum of space, sticking to the rapidly spinning drums of the rake. This guarantees that the ship only brings high-purity ore on board, wasting no cargo space on dirt.</p>
+        </div>
+    </section>
+</body>
+</html>
