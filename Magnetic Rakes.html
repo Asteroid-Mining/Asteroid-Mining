@@ -117,6 +117,9 @@
         }
 
         .step-card {
+            display: block; /* Add this */
+            text-decoration: none; /* Add this */
+            color: inherit; /* Add this */
             background: white;
             padding: 2rem;
             border-radius: 12px;
@@ -244,27 +247,27 @@
         <h2 class="section-title">The Extraction Sequence</h2>
         
         <div class="steps-container">
-            <div class="step-card">
+            <a href="Sweep.html" class="step-card">
                 <div class="step-icon">📡</div>
                 <h3>1. The Sweep</h3>
                 <p>The spacecraft hovers just a few meters above the asteroid surface. It extends a boom arm containing a series of rotating magnetic coils.</p>
-            </div>
+            </a>
 
             <div class="step-icon" style="text-align: center; align-self: center; color: #cbd5e1; transform: rotate(90deg);">➤</div>
 
-            <div class="step-card">
+            <a href="Jump.html" class="step-card">
                 <div class="step-icon">🧲</div>
                 <h3>2. The Jump</h3>
                 <p>When the magnets activate, loose grains of Nickel and Iron fly upward, overcoming the asteroid's weak gravity and sticking to the rake's bristles.</p>
-            </div>
+            </a>
 
             <div class="step-icon" style="text-align: center; align-self: center; color: #cbd5e1; transform: rotate(90deg);">➤</div>
 
-            <div class="step-card">
+            <a href="Deposit.html" class="step-card">
                 <div class="step-icon">📥</div>
                 <h3>3. The Deposit</h3>
                 <p>The rotating drum moves the captured dust inside the ship. The magnets turn off (or pass a scraper), causing the metal to fall into the cargo hold.</p>
-            </div>
+            </a>
         </div>
     </section>
 
