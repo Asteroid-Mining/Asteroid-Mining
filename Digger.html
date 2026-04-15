@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digger Class | Swarm Robotics</title>
+    <style>
+        :root {
+            --bg-light: #f0fdfa; --bg-white: #ffffff; --text-main: #334155; --text-dark: #134e4a;
+            --accent-dark: #111827; --accent-teal: #06b6d4; --accent-digger: #f59e0b; /* Industrial Gold */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-digger);
+            background-image: radial-gradient(circle, var(--accent-digger) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: rgba(245, 158, 11, 0.1); color: var(--accent-digger); border: 1px solid var(--accent-digger); text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-digger); color: white; box-shadow: 0 0 15px var(--accent-digger); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-digger); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 4px solid var(--accent-digger); }
+        
+        .status-bar { display: flex; gap: 2rem; background: var(--accent-dark); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; justify-content: center; flex-wrap: wrap; }
+        .status-item { text-align: center; }
+        .status-val { font-size: 1.5rem; font-weight: bold; color: var(--accent-digger); display: block; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Swarm <span style="color:var(--accent-digger)">//</span> Digger</div>
+        <a href="Swarm Robotics.html" class="back-btn">← Back to Hive</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Digger-Class Drone</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            The brute force of the swarm. Diggers are heavily armored, slow-moving units equipped with anchoring harpoons and micro-plasma cutters designed to shatter solid rock.
+        </p>
+
+        <div class="status-bar">
+            <div class="status-item"><span class="status-val">Plasma Array</span> Primary Tool</div>
+            <div class="status-item"><span class="status-val">Heavy</span> Armor Class</div>
+            <div class="status-item"><span class="status-val">Micro-Harpoons</span> Anchoring System</div>
+        </div>
+
+        <img src="Digger Drone.png" alt="Digger drone fracturing rock" style="max-width: 600px;">
+
+        <div class="content-box">
+            <h2 class="section-title" style="border: none; padding: 0;">Zero-G Excavation</h2>
+            <p style="margin-bottom: 1rem;">Because drilling pushes a spacecraft backward in zero gravity, Diggers must first fire explosive micro-harpoons into the rock to anchor themselves securely to the surface.</p>
+            <p>Once tethered, they deploy plasma cutters and percussive chisels to break the ore into manageable chunks. Diggers do not carry the ore; they simply break it loose and leave it floating in a localized tethered net for the Hauler class to collect.</p>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycler Class | Swarm Robotics</title>
+    <style>
+        :root {
+            --bg-light: #f0fdfa; --bg-white: #ffffff; --text-main: #334155; --text-dark: #134e4a;
+            --accent-dark: #111827; --accent-teal: #06b6d4; --accent-alert: #f43f5e; /* Red Alert Accent */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        
+        header {
+            background-color: var(--accent-dark); color: white; padding: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 4px solid var(--accent-alert);
+            background-image: radial-gradient(circle, var(--accent-alert) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .brand { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .back-btn {
+            background-color: rgba(244, 63, 94, 0.1); color: var(--accent-alert); border: 1px solid var(--accent-alert); text-decoration: none;
+            padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: bold; transition: 0.3s;
+        }
+        .back-btn:hover { background-color: var(--accent-alert); color: white; box-shadow: 0 0 15px var(--accent-alert); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-dark); border-left: 5px solid var(--accent-alert); padding-left: 15px; }
+        img { max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 2rem auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        .content-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 4px solid var(--accent-alert); }
+        
+        .status-bar { display: flex; gap: 2rem; background: var(--accent-dark); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; justify-content: center; flex-wrap: wrap; }
+        .status-item { text-align: center; }
+        .status-val { font-size: 1.5rem; font-weight: bold; color: var(--accent-alert); display: block; }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Swarm <span style="color:var(--accent-alert)">//</span> Recycler (Unit 73)</div>
+        <a href="Swarm Robotics.html" class="back-btn">← Back to Hive</a>
+    </header>
+
+    <section class="container">
+        <h1 style="font-size: 3rem; color: var(--text-dark); margin-bottom: 1rem;">Recycler-Class Drone</h1>
+        <p style="font-size: 1.2rem; color: #475569; max-width: 800px; margin-bottom: 2rem;">
+            Mining asteroids is dangerous work. When a drone suffers catastrophic damage from micro-meteoroids or sudden rock fractures, the Recycler class is dispatched to salvage the remains.
+        </p>
+
+        <div class="status-bar">
+            <div class="status-item"><span class="status-val">Salvage</span> Primary Directive</div>
+            <div class="status-item"><span class="status-val">Grapple Arms</span> Primary Tool</div>
+            <div class="status-item"><span class="status-val">High</span> Expendability</div>
+        </div>
+
+        <img src="Recycler Drone.png" alt="A Recycler drone salvaging parts from a damaged Digger unit" style="max-width: 600px;">
+
+        <div class="content-box">
+            <h2 class="section-title" style="border: none; padding: 0;">The Expendability Protocol</h2>
+            <p style="margin-bottom: 1rem;">The primary advantage of swarm robotics is redundancy. The Mothership does not waste energy mourning or attempting complex repairs on heavily damaged units like Digger-73. Instead, it activates the Expendability Protocol.</p>
+            <p>Recycler drones are dispatched to the coordinates of the downed unit. Using precise cutting lasers and grappling arms, they dismantle the broken drone, separating the valuable onboard processors, unspent propellant, and refined metals from the useless scrap. This salvaged material is then fed back into the Mothership's 3D printers to manufacture a brand-new replacement unit.</p>
+        </div>
+    </section>
+</body>
+</html>

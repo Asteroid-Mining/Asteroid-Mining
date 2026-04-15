@@ -134,6 +134,9 @@
         }
 
         .worker-node {
+            display: block; /* Add this */
+            text-decoration: none; /* Add this */
+            color: inherit; /* Add this */
             background: #ecfeff;
             border: 1px solid #a5f3fc;
             padding: 1rem;
@@ -284,36 +287,29 @@
                 </p>
                 
                 <div class="worker-grid">
-                    <div class="worker-node">
+                    <a href="Scout.html" class="worker-node">
                         <span class="status-dot"></span>
                         <strong>Scout</strong>
                         <br><span style="font-size:0.75rem">Mapping</span>
-                    </div>
-                    <div class="worker-node">
+                    </a>
+                    
+                    <a href="Digger.html" class="worker-node">
                         <span class="status-dot"></span>
                         <strong>Digger</strong>
                         <br><span style="font-size:0.75rem">Drilling</span>
-                    </div>
-                    <div class="worker-node">
+                    </a>
+                    
+                    <a href="Hauler.html" class="worker-node">
                         <span class="status-dot"></span>
                         <strong>Hauler</strong>
                         <br><span style="font-size:0.75rem">Transport</span>
-                    </div>
-                    <div class="worker-node">
+                    </a>
+                    
+                    <a href="Unit73.html" class="worker-node">
                         <span class="status-dot" style="background-color: var(--accent-alert); box-shadow:none;"></span>
                         <strong>Unit 73</strong>
                         <br><span style="font-size:0.75rem">Repair Req.</span>
-                    </div>
-                    <div class="worker-node">
-                        <span class="status-dot"></span>
-                        <strong>Scout</strong>
-                        <br><span style="font-size:0.75rem">Mapping</span>
-                    </div>
-                    <div class="worker-node">
-                        <span class="status-dot"></span>
-                        <strong>Hauler</strong>
-                        <br><span style="font-size:0.75rem">Transport</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
