@@ -148,6 +148,88 @@
             .section-title { font-size: 1.5rem; }
             .container { padding: 2rem 1.5rem; }
         }
+        /* --- CSS ORBIT DIAGRAM --- */
+        .orbit-showcase {
+            background: var(--accent-dark);
+            border-radius: 12px;
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px; height: 30px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-gold);
+        }
+
+        .orbit-earth {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px; height: 180px;
+            border: 2px dashed rgba(14, 165, 233, 0.4);
+            border-radius: 50%;
+        }
+
+        .orbit-apollo {
+            position: absolute;
+            /* Shifted heavily left so the massive right side crosses inside Earth's orbit */
+            top: 50%; left: 35%; 
+            transform: translate(-50%, -50%);
+            width: 260px; height: 200px;
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+        }
+
+        .planet-earth {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px; height: 12px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+        }
+
+        .asteroid-apollo {
+            position: absolute;
+            top: 50%; right: -4px; 
+            transform: translateY(-50%);
+            width: 8px; height: 8px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+        }
+
+        .diagram-legend {
+            display: flex;
+            gap: 1.5rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        
+        @media (max-width: 768px) {
+            .diagram-legend { flex-direction: column; gap: 0.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -163,8 +245,17 @@
             Apollos are the most abundant and commercially viable group of Near-Earth Asteroids. They are <strong>Earth-crossing</strong>, but unlike Atens, their semi-major axis is greater than 1 AU. This means they spend the vast majority of their time in the deep cold of space outside Earth's orbit, sweeping inward only to cross our path.
         </p>
 
-        <div style="margin-top: 2rem;">
-            <img src="Apollo Orbit Diagram.png" alt="Diagram showing Apollo orbit" style="margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        <div class="orbit-showcase">
+            <div class="diagram-container">
+                <div class="sun"></div>
+                <div class="orbit-earth"><div class="planet-earth"></div></div>
+                <div class="orbit-apollo"><div class="asteroid-apollo"></div></div>
+            </div>
+            <div class="diagram-legend">
+                <div class="legend-item"><div class="dot" style="background: var(--accent-blue);"></div> Earth's Orbit</div>
+                <div class="legend-item"><div class="dot" style="background: var(--accent-blue); border: 2px solid white"></div> Apollo Orbit</div>
+                <div class="legend-item"><div class="dot" style="background: var(--accent-gold);"></div> The Sun</div>
+            </div>
         </div>
     </section>
 
