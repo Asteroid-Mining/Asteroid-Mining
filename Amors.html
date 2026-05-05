@@ -148,6 +148,89 @@
             .section-title { font-size: 1.5rem; }
             .container { padding: 2rem 1.5rem; }
         }
+        /* --- CSS ORBIT DIAGRAM --- */
+        .orbit-showcase {
+            background: var(--accent-dark);
+            border-radius: 12px;
+            padding: 3rem 1rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px; height: 30px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-gold);
+        }
+
+        .orbit-earth {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            /* Smaller radius to leave room for the Amor orbit outside it */
+            width: 140px; height: 140px; 
+            border: 2px dashed rgba(14, 165, 233, 0.4);
+            border-radius: 50%;
+        }
+
+        .orbit-amor {
+            position: absolute;
+            /* Shifted slightly right, but mathematically stays wider than Earth's radius */
+            top: 50%; left: 45%; 
+            transform: translate(-50%, -50%);
+            width: 250px; height: 210px; 
+            border: 2px solid var(--accent-red);
+            border-radius: 50%;
+        }
+
+        .planet-earth {
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px; height: 12px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+        }
+
+        .asteroid-amor {
+            position: absolute;
+            top: 50%; left: -4px; 
+            transform: translateY(-50%);
+            width: 8px; height: 8px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            box-shadow: 0 0 5px white;
+        }
+
+        .diagram-legend {
+            display: flex;
+            gap: 1.5rem;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        
+        @media (max-width: 768px) {
+            .diagram-legend { flex-direction: column; gap: 0.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -163,8 +246,17 @@
             Amors are a group of Near-Earth Asteroids that approach Earth from the outside, but <strong>do not cross Earth's orbit</strong>. Their closest approach to the Sun (perihelion) is strictly greater than Earth's furthest point, meaning they spend their lives hovering in the space between Earth and Mars.
         </p>
 
-        <div style="margin-top: 2rem;">
-            <img src="Amor Orbit Diagram.png" alt="Diagram showing Amor orbit outside Earth" style="margin: 0 auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        <div class="orbit-showcase">
+            <div class="diagram-container">
+                <div class="sun"></div>
+                <div class="orbit-earth"><div class="planet-earth"></div></div>
+                <div class="orbit-amor"><div class="asteroid-amor"></div></div>
+            </div>
+            <div class="diagram-legend">
+                <div class="legend-item"><div class="dot" style="background: var(--accent-blue);"></div> Earth's Orbit</div>
+                <div class="legend-item"><div class="dot" style="background: var(--accent-red);"></div> Amor Orbit</div>
+                <div class="legend-item"><div class="dot" style="background: var(--accent-gold);"></div> The Sun</div>
+            </div>
         </div>
     </section>
 
